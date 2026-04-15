@@ -10,6 +10,17 @@ def cinema_visit(
     hall_number: int,
     cleaner: str
 ) -> None:
+    if isinstance(movie, list):
+        old_customers = movie
+        old_hall_number = customers
+        old_cleaner = hall_number
+        old_movie = cleaner
+
+        movie = old_movie
+        customers = old_customers
+        hall_number = old_hall_number
+        cleaner = old_cleaner
+
     customer_instances = []
     for person in customers:
         customer = Customer(person["name"], person["food"])
